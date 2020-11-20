@@ -36,6 +36,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    'twitter'
 ]
 
 MIDDLEWARE = [
@@ -158,3 +160,15 @@ if not DEBUG:
 else:
     STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'), ]
     MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+#Twitter API
+if not DEBUG:
+    CONSUMER_KEY= config('CONSUMER_KEY')
+    CONSUMER_SECRET= config('CONSUMER_SECRET')
+    ACCESS_TOKEN= config('ACCESS_TOKEN')
+    ACCESS_TOKEN_SWCRET= config('ACCESS_TOKEN_SWCRET')
+else:
+    CONSUMER_KEY= config('CONSUMER_KEY')
+    CONSUMER_SECRET= config('CONSUMER_SECRET')
+    ACCESS_TOKEN= config('ACCESS_TOKEN')
+    ACCESS_TOKEN_SECRET= config('ACCESS_TOKEN_SECRET')
